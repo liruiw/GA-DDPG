@@ -72,12 +72,6 @@ def sample_experiment_objects():
     file_dir = [f[:-5].split('.')[0][:-2] if 'json' in f else f for f in file_index ]
     sample_index = np.random.choice(range(len(file_dir)), min(LOAD_OBJ_NUM, len(file_dir)), replace=False).astype(np.int)
     file_dir = [file_dir[idx] for idx in sample_index]
-    if not CONFIG.self_supervision:
-        """ augment with primitive shapes """
-        extra_file_index = json.load(open(os.path.join(cfg.EXPERIMENT_OBJ_INDEX_DIR, 'extra_shape.json')))['test']
-        extra_file_dir = [f[:-5].split('.')[0][:-2] for f in extra_file_index]
-        file_dir = file_dir + extra_file_dir
-        sample_index = np.random.choice(range(len(file_dir)), min(LOAD_OBJ_NUM, len(file_dir)), replace=False).astype(np.int)
 
     file_dir = list(set(file_dir))
     print('training object index: {} obj num: {}'.format(index_file, len(file_dir)))

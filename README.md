@@ -6,6 +6,9 @@
 
 
 ### Installation
+```bash
+git clone https://github.com/liruiw/GA-DDPG.git --recursive
+```
 
 0. Setup: Ubuntu 16.04 or above, CUDA 10.0 or above, python 2.7 / 3.6
 
@@ -30,7 +33,7 @@ Example 1      |  Example 2
 <img src="assets/demo.gif" width="224" height="224"/>  |  <img src="assets/demo3.gif" width="224" height="224"/>
 
 ### Save Data and Offline Training
-0. Download example offline data with ```bash experiments/scripts/download_offline_data.sh ``` The .npz dataset would be saved in data/offline_data and can be loaded for training.
+0. Download example offline data with ```bash experiments/scripts/download_offline_data.sh ``` The .npz dataset (saved replay buffer) can be found in data/offline_data and can be loaded for training.
 1. To save extra gpus for online rollouts, use the offline training script ```bash ./experiments/scripts/train_offline.sh bc_aux_dagger.yaml BC```
 2. Saving dataset ```bash ./experiments/scripts/train_online_save_buffer.sh bc_save_data.yaml BC```.
 
@@ -43,7 +46,8 @@ Example 1      |  Example 2
 ### Note
 0. Checkout ```core/test_realworld_ros_final.py``` for an example of real-world usages.
 1. Related Works ([OMG](https://github.com/liruiw/OMG-Planner), [ACRONYM](https://github.com/NVlabs/acronym), [6DGraspNet](https://github.com/NVlabs/6dof-graspnet), [6DGraspNet-Pytorch](https://github.com/jsll/pytorch_6dof-graspnet), [ContactGraspNet](https://github.com/NVlabs/contact_graspnet))
-2. Please use Github issue tracker to report bugs. For other questions please contact [Lirui Wang](mailto:wangliruisz@gmail.com).
+2. To use the full Acronym dataset with Shapenet meshes, please follow [ACRONYM](https://github.com/NVlabs/acronym) to download the meshes and grasps and process with this [script](https://github.com/liruiw/OMG-Planner/blob/master/real_world/process_shape.py)
+3. Please use Github issue tracker to report bugs. For other questions please contact [Lirui Wang](mailto:wangliruisz@gmail.com).
 
 
 ### File Structure
