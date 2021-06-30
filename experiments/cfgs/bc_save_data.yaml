@@ -1,0 +1,18 @@
+RL_MEMORY_SIZE: 50000 # 10000000
+RL_SAVE_DATA_NAME: 'data_50k.npz'
+RL_TRAIN:
+  dagger: False
+  explore_cap: 0.0
+  RL: False
+  policy_aux: True
+  batch_size: 64
+  max_epoch: 150000
+  train_goal_feature: False
+  onpolicy: False 
+  online_buffer_ratio: 0.
+  num_remotes: 7
+  updates_per_step: 20
+  use_expert_plan: True
+ 
+ 
+ 

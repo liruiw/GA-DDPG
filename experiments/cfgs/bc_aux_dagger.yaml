@@ -1,0 +1,14 @@
+RL_MEMORY_SIZE: 2000000 # 10000000
+RL_SAVE_DATA_NAME: 'data_5w.npz'
+OFFLINE_RL_MEMORY_SIZE: 50000
+RL_TRAIN:
+  dagger: True
+  explore_cap: 0.5
+  RL: False
+  policy_aux: True
+  batch_size: 128
+  max_epoch: 80000
+  online_buffer_ratio: 0.
+  num_remotes: 7
+  updates_per_step: 25
+  use_expert_plan: True

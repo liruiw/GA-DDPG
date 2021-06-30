@@ -1,0 +1,3 @@
+[submodule "OMG"]
+	path = OMG
+	url = https://github.com/liruiw/OMG-Planner.git

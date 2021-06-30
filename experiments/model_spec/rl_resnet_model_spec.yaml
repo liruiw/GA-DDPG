@@ -1,0 +1,30 @@
+
+goal_feature_extractor:
+    class: ResNetFeature   
+    net_kwargs:
+        input_dim: 3
+        pretrained: True
+        batch_norm: True
+    opt: Adam   
+    opt_kwargs:
+        lr: 1.0e-3
+    scheduler: MultiStepLR
+    scheduler_kwargs:
+        milestones: [8000, 16000, 30000, 50000, 70000, 90000]
+        gamma: 0.3
+
+state_feature_extractor:
+    class: ResNetFeature  
+    net_kwargs:
+        input_dim: 3
+        pretrained: True
+        batch_norm: True
+    opt: Adam
+    opt_kwargs:
+        lr: 1.0e-3
+    scheduler: MultiStepLR
+    scheduler_kwargs:
+        milestones: [8000, 16000, 30000, 50000, 70000, 90000]
+        gamma: 0.7
+
+ 
