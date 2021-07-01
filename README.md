@@ -21,11 +21,11 @@ git clone https://github.com/liruiw/GA-DDPG.git --recursive
 	    ```
 2. Install [PointNet++](https://github.com/liruiw/Pointnet2_PyTorch)
 
-3. Download environment data with ```bash experiments/scripts/download_data.sh ```
+3. Download environment data ```bash experiments/scripts/download_data.sh ```
 
 
 ### Pretrained Model Demo
-0. Download pretrained models with ```bash experiments/scripts/download_model.sh ```
+0. Download pretrained models ```bash experiments/scripts/download_model.sh ```
 1. Demo model test ```bash experiments/scripts/test_demo.sh```
 
 Example 1      |  Example 2
@@ -33,19 +33,19 @@ Example 1      |  Example 2
 <img src="assets/demo.gif" width="224" height="224"/>  |  <img src="assets/demo3.gif" width="224" height="224"/>
 
 ### Save Data and Offline Training
-0. Download example offline data with ```bash experiments/scripts/download_offline_data.sh ``` The .npz dataset (saved replay buffer) can be found in data/offline_data and can be loaded for training.
+0. Download example offline data ```bash experiments/scripts/download_offline_data.sh ``` The .npz dataset (saved replay buffer) can be found in ```data/offline_data``` and can be loaded for training.
 1. To save extra gpus for online rollouts, use the offline training script ```bash ./experiments/scripts/train_offline.sh bc_aux_dagger.yaml BC```
 2. Saving dataset ```bash ./experiments/scripts/train_online_save_buffer.sh bc_save_data.yaml BC```.
 
 ### Online Training and Testing
 0. We use [ray](https://github.com/ray-project/ray) for parallel rollout and training. The training scripts might require adjustment according to the local machine. See ```config.py``` for some notes.
 1. Training online ```bash ./experiments/scripts/train_online_visdom.sh td3_critic_aux_policy_aux.yaml DDPG```. Use visdom and tensorboard to monitor.
-2. Testing on YCB objects with ```bash ./experiments/scripts/test_ycb.sh demo_model```. Replace demo_model with trained model. Logs and videos would be saved to ```output_misc```
+2. Testing on YCB objects ```bash ./experiments/scripts/test_ycb.sh demo_model```. Replace demo_model with trained models. Logs and videos would be saved to ```output_misc```
 
 
 ### Note
 0. Checkout ```core/test_realworld_ros_final.py``` for an example of real-world usages.
-1. Related Works ([OMG](https://github.com/liruiw/OMG-Planner), [ACRONYM](https://github.com/NVlabs/acronym), [6DGraspNet](https://github.com/NVlabs/6dof-graspnet), [6DGraspNet-Pytorch](https://github.com/jsll/pytorch_6dof-graspnet), [ContactGraspNet](https://github.com/NVlabs/contact_graspnet))
+1. Related Works ([OMG](https://github.com/liruiw/OMG-Planner), [ACRONYM](https://github.com/NVlabs/acronym), [6DGraspNet](https://github.com/NVlabs/6dof-graspnet), [6DGraspNet-Pytorch](https://github.com/jsll/pytorch_6dof-graspnet), [ContactGraspNet](https://github.com/NVlabs/contact_graspnet), [Unseen-Clustering](https://github.com/NVlabs/UnseenObjectClustering))
 2. To use the full Acronym dataset with Shapenet meshes, please follow [ACRONYM](https://github.com/NVlabs/acronym#using-the-full-acronym-dataset) to download the meshes and grasps and follow [OMG-Planner](https://github.com/liruiw/OMG-Planner#process-new-shapes) to process and save in ```/data```. ```filter_shapenet.json``` can then be used for training.
 3. Please use Github issue tracker to report bugs. For other questions please contact [Lirui Wang](mailto:wangliruisz@gmail.com).
 
@@ -73,11 +73,11 @@ Example 1      |  Example 2
 |   |   |──  train_online 		# online training
 |   |   |──  train_test_offline 	# testing and offline training
 |   |   |──  network 		# network architecture
+|   |   |──  test_realworld_ros_final 		# real-world script example
 |   |   |──  agent 		# main agent code
 |   |   |──  replay_memory 		# replay buffer
 |   |   |──  trainer 	# ray-related training setup
 |   |   └── ...
-|   |── real_world		# real world experiment scripts
 |   |── output 		# trained model
 |   |── output_misc 	# log and videos
 |   └── ...

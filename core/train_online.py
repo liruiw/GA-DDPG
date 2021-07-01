@@ -425,7 +425,6 @@ def choose_setup():
         NUM_REMOTES = int(NUM_REMOTES * 2)
         agent_wrapper = AgentWrapperGPU2 # 2
 
-    cfg.RL_SAVE_DATA_ROOT_DIR = cfg.RL_SAVE_DATA_ROOT_DIR.replace('data/', 'ngc_data/')
     print('update batch size: {} worker: {} memory: {}'.format(CONFIG.batch_size, NUM_REMOTES, max_memory))
     return actor_wrapper, agent_wrapper, max_memory, NUM_REMOTES
 
