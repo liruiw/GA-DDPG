@@ -18,7 +18,6 @@ pyyaml==3.12
 cmake
 future
 transforms3d
-tensorboardX
 scipy
 IPython
 pyopengl

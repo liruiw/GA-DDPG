@@ -188,6 +188,9 @@ class ActorWrapper(object):
         return state, check_scene_flag
 
     def get_flags(self, explore, expert_traj_length, step):
+        """
+        get different booleans for the current step
+        """
         expert_flag   = float(not explore)
         perturb_flags = 0
         apply_dagger  = CONFIG.dagger and \
@@ -211,7 +214,6 @@ class ActorWrapper(object):
             try:
                 state, check_scene_flag = self.init_episode( )
             except:
-                IPython.embed()
                 print('init episode error')
                 check_scene_flag = False
             if not check_scene_flag:  return [0]
