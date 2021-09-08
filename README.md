@@ -13,6 +13,7 @@ git clone https://github.com/liruiw/GA-DDPG.git --recursive
 0. Setup: Ubuntu 16.04 or above, CUDA 10.0 or above, python 2.7 / 3.6
 
 1. * (Required for Training) - Install [OMG](https://github.com/liruiw/OMG-Planner) submodule and reuse conda environment.
+	* (Docker) See [OMG Docker](https://github.com/liruiw/OMG-Planner#docker-setup) for details.
    * (Demo) - Install GA-DDPG inside a new conda environment
 	    ```angular2html
 	    conda create --name gaddpg python=3.6.9
