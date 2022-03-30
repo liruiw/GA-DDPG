@@ -88,11 +88,11 @@ Example 1      |  Example 2
 ### Citation
 If you find GA-DDPG useful in your research, please consider citing:
 ```
-@inproceedings{wang2020goal,
-	author    = {Lirui Wang, Yu Xiang, Wei Yang, Arsalan Mousavian, and Dieter Fox},
-	title     = {Goal-Auxiliary Actor-Critic for 6D Robotic Grasping with Point Clouds},
-	booktitle = {arXiv:2010.00824},
-	year      = {2020}
+@inproceedings{wang2021goal,
+author    = {Lirui Wang, Yu Xiang, Wei Yang, Arsalan Mousavian, and Dieter Fox},
+title     = {Goal-Auxiliary Actor-Critic for 6D Robotic Grasping with Point Clouds},
+booktitle = {The Conference on Robot Learning (CoRL)},
+year      = {2021}
 }
 ```
 
