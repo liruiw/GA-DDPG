@@ -7,10 +7,10 @@ psutil
 pybullet
 gym
 numpy
-torchvision==0.5.0
-torch==1.4.0
+torchvision 
+torch 
 transforms3d
-opencv-python==3.4.3.18
+opencv-python
 IPython
 matplotlib
 easydict

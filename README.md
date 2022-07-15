@@ -34,7 +34,7 @@ Example 1      |  Example 2
 <img src="assets/demo.gif" width="224" height="224"/>  |  <img src="assets/demo3.gif" width="224" height="224"/>
 
 ### Save Data and Offline Training
-0. Download example offline data ```bash experiments/scripts/download_offline_data.sh ``` The .npz dataset (saved replay buffer) can be found in ```data/offline_data``` and can be loaded for training.
+0. Download example offline data ```bash experiments/scripts/download_offline_data.sh ``` The .npz dataset (saved replay buffer) can be found in ```data/offline_data``` and can be loaded for training (there are several deprecated attributes).
 1. To save extra gpus for online rollouts, use the offline training script ```bash ./experiments/scripts/train_offline.sh bc_aux_dagger.yaml BC```
 2. Saving dataset ```bash ./experiments/scripts/train_online_save_buffer.sh bc_save_data.yaml BC```.
 
