@@ -184,6 +184,7 @@ class ActorWrapper(object):
                 start_rotation = self.env._get_ef_pose(mat=True)[:3, :3]
                 if check_scene(self.env, state, start_rotation):
                     check_scene_flag = True
+                    state = self.env._get_observation()
                     break
         return state, check_scene_flag
 
