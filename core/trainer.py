@@ -119,7 +119,7 @@ class AgentWrapper(object):
     def select_action(self, state, actions=None, goal_state=None, remain_timestep=1,
                       gt_goal_rollout=True, curr_joint=None, gt_traj=None):
         """ on policy action """
-        action, traj, extra_pred, aux_pred = self.agent.select_action(state, actions=actions, goal_state=goal_state )
+        action, traj, extra_pred, aux_pred = self.agent.select_action(state, actions=actions, goal_state=goal_state, remain_timestep=remain_timestep)
         return action, traj, extra_pred, aux_pred
 
     def update_parameter(self, batch_data, updates, i):

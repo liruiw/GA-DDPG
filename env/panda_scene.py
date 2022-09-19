@@ -496,6 +496,8 @@ class PandaYCBEnv():
         if self.objects_loaded:
             objectUids = self._objectUids
 
+        import IPython
+        IPython.embed()
         scene = sio.loadmat(os.path.join(self.data_root_dir, scene_file + '.mat'))
         poses = scene['pose']
         path = scene['path']
@@ -504,7 +506,7 @@ class PandaYCBEnv():
         new_objs = objectUids is None
         objects_paths = [p_.strip() + '/' for p_ in path]
 
-        for i, name in enumerate(objects_paths[:-2]):
+        for i, name in enumerate([objects_paths[-3]]):
             pose = poses[i]
             trans = pose[:3, 3] + np.array(pos) # fixed position
             orn = ros_quat(mat2quat(pose[:3, :3]))

@@ -54,6 +54,8 @@ parser.add_argument('--output_file',  type=str, default='rollout_success.txt')
 parser.add_argument('--batch_size',  type=int, default=-1)
 parser.add_argument('--fix_output_time', type=str, default=None)
 
+TEST_SCENE_FILE = 'filter_shapenet' # ycb_large
+TEST_INDEX_FILE = 'filter_shapenet_scene'  # ycb_large
 
 def setup():
     """
@@ -309,7 +311,7 @@ if __name__ == "__main__":
     torch.backends.cudnn.deterministic = True
     net_dict, output_time = setup()
     CONFIG = cfg.RL_TRAIN
-    cfg.RL_TEST_SCENE = 'data/gaddpg_scenes'
+    # cfg.RL_TEST_SCENE = 'data/gaddpg_scenes'
 
     # Args
     RENDER = args.render
@@ -323,7 +325,7 @@ if __name__ == "__main__":
     LOG_INTERVAL = 4
     CONFIG.output_time = output_time
     CONFIG.off_policy = True
-    CONFIG.index_file = 'ycb_large.json'
+    CONFIG.index_file = f'{TEST_INDEX_FILE}.json'
     POLICY = 'DDPG' if CONFIG.RL else 'BC'
     cnt = 0.
 
@@ -367,7 +369,7 @@ if __name__ == "__main__":
     print('output_time: {} logdir: {}'.format(output_time, logdir))
     scene_prefix =  '{}_scene'.format(CONFIG.index_file)
     MAX_ONLIND_SCENE_NUM = len(glob.glob(os.path.join(cfg.RL_TEST_SCENE, scene_prefix) + '*'))
-    file = os.path.join(cfg.EXPERIMENT_OBJ_INDEX_DIR, 'ycb_large.json')
+    file = os.path.join(cfg.EXPERIMENT_OBJ_INDEX_DIR, f'{TEST_SCENE_FILE}.json') # ycb_large
     with open(file) as f: file_dir = json.load(f)
     file_dir = file_dir['test'][:args.test_episode_num ]
     file_dir = [f[:-5].split('.')[0][:-2] for f in file_dir]
