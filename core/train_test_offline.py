@@ -54,8 +54,8 @@ parser.add_argument('--output_file',  type=str, default='rollout_success.txt')
 parser.add_argument('--batch_size',  type=int, default=-1)
 parser.add_argument('--fix_output_time', type=str, default=None)
 
-TEST_SCENE_FILE = 'filter_shapenet' # ycb_large
-TEST_INDEX_FILE = 'filter_shapenet_scene'  # ycb_large
+TEST_SCENE_FILE = 'ycb_large' # ycb_large
+TEST_INDEX_FILE = 'ycb_large'  # ycb_large
 
 def setup():
     """
