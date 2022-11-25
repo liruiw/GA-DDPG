@@ -18,5 +18,5 @@ echo Logging output to "$LOG"
 
 CUDA_VISIBLE_DEVICES=0  python -m core.train_test_offline  --pretrained  output/${MODEL_NAME}  \
 	 							--test   --log --record  --test_episode_num ${EPI_NUM} \
-	 							--num_runs ${RUN_NUM} --model_surfix ${EPOCH}
+	 							--num_runs ${RUN_NUM} --model_surfix ${EPOCH} --render
 
